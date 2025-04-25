@@ -23,33 +23,35 @@ import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/onboarding" element={<OnboardingFlow />} />
-          <Route path="/kwikbuddy" element={<KwikBuddy />} />
-          <Route path="/kwikgrowth" element={<KwikGrowth />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/kwikbuddy" element={<KwikBuddyDashboard />} />
-          <Route path="/dashboard/kwikbuddy/step1" element={<KwikBuddyStep1 />} />
-          <Route path="/dashboard/kwikbuddy/step2" element={<KwikBuddyStep2 />} />
-          <Route path="/dashboard/kwikbuddy/step3" element={<KwikBuddyStep3 />} />
-          <Route path="/dashboard/kwikbuddy/step4" element={<KwikBuddyStep4 />} />
-          <Route path="/dashboard/kwikbuddy/step5" element={<KwikBuddyStep5 />} />
-          <Route path="/dashboard/kwikgrowth" element={<KwikGrowthDashboard />} />
-          <Route path="/dashboard/kwikgrowth/ads/create" element={<KwikAdsCreate />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/onboarding" element={<OnboardingFlow />} />
+            <Route path="/kwikbuddy" element={<KwikBuddy />} />
+            <Route path="/kwikgrowth" element={<KwikGrowth />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard/kwikbuddy" element={<KwikBuddyDashboard />} />
+            <Route path="/dashboard/kwikbuddy/step1" element={<KwikBuddyStep1 />} />
+            <Route path="/dashboard/kwikbuddy/step2" element={<KwikBuddyStep2 />} />
+            <Route path="/dashboard/kwikbuddy/step3" element={<KwikBuddyStep3 />} />
+            <Route path="/dashboard/kwikbuddy/step4" element={<KwikBuddyStep4 />} />
+            <Route path="/dashboard/kwikbuddy/step5" element={<KwikBuddyStep5 />} />
+            <Route path="/dashboard/kwikgrowth" element={<KwikGrowthDashboard />} />
+            <Route path="/dashboard/kwikgrowth/ads/create" element={<KwikAdsCreate />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </TooltipProvider>
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </QueryClientProvider>
+  );
+};
 
 export default App;
